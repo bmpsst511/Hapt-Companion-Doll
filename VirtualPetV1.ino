@@ -10,15 +10,17 @@
 
 Servo myservo;  // 建立一個 servo 物件，最多可建立 12個 servo
 int pos = 0;    // 設定 Servo 位置的變數
-int TouchSensor = D0; //connected to Digital pin D0
-const char* ssid =/*"dlink";*/ "iPhone";
-const char* password =/* "468255000";*/"19940625";
+int ForceSensor = A0; //connected to Digital pin A0
+int fsr;
+const char* ssid =/*"dlink";*/ "LeeiPhone";
+const char* password =/* "468255000";*/"hnwl0618";
+int port = 30;
 String PoseX, PoseY, PoseZ, On;
  /* Set the delay between fresh samples */
 #define BNO055_SAMPLERATE_DELAY_MS (100)
 
 Adafruit_BNO055 bno = Adafruit_BNO055(55);
-WiFiServer server(27);
+WiFiServer server(port);
 WiFiUDP Client;
 
 /**************************************************************************/
@@ -47,8 +49,7 @@ void setup() {
   Serial.begin(115200);
   WiFi.mode(WIFI_STA); 
   Serial.println("Orientation Sensor Test"); Serial.println("");
-  pinMode(TouchSensor, INPUT);
-  myservo.attach(D6);  // 將 servo 物件連接到 pin 7
+  myservo.attach(D4);  // 將 servo 物件連接到 pin 7
   WiFi.begin(ssid,password);
   Serial.println("Connecting");
  
@@ -64,7 +65,7 @@ void setup() {
   Serial.println(WiFi.localIP());
  
   // Start the UDP client
-  Client.begin(27);
+  Client.begin(port);
 
    /* Initialise the sensor */
   if(!bno.begin())
@@ -123,21 +124,21 @@ void loop() {
   Serial.print(F(" "));
   Serial.println(mag, DEC);*/
   Serial.print("\r\n");
-  if(digitalRead(TouchSensor)==HIGH)       //Read Touch sensor signal
+  fsr = analogRead(ForceSensor); // 讀取FSR
+  On = (int)fsr;
+  if(fsr>70)       //Read Touch sensor signal
    { 
-    On = "1";
    for(int i = 0; i <= 180; i+=1){
     myservo.write(i); // 使用write，傳入角度，從0度轉到180度
   }
    }
   else
    {
-    On = "0";
      myservo.write(0); // 使用write，傳入角度，從0度轉到180度
    }
          // Send the distance to the client, along with a break to separate our messages
-          const char ip[]="172.20.10.3";
-        Client.beginPacket(ip,27);
+          const char ip[]="172.20.10.2";
+        Client.beginPacket(ip,port);
         Client.println(PoseX+";"+PoseY+";"+PoseZ+";"+On);
         Client.endPacket();
           delay(BNO055_SAMPLERATE_DELAY_MS);
