@@ -6,35 +6,37 @@ using System.Net.Sockets;
 using System.Text;  
 using System.Threading;  
   
-public class UDPReceive:MonoBehaviour  
+public class test:MonoBehaviour  
 {  
     //以下默认都是私有的成员  
     Socket socket; //目标socket  
     EndPoint clientEnd; //客户端  
     IPEndPoint ipEnd; //侦听端口  
-    public float RotateX, RotateY, RotateZ, TouchVal;
-    public float minAngle = 0.0F;
-    public float maxAngle=360f ;
-    public float speed;
+    public float RotateX, RotateY, RotateZ;
+    static public float TouchVal;
     string recvStr; //接收的字符串  
     string sendStr; //发送的字符串  
     byte[] recvData=new byte[1024]; //接收的数据，必须为字节  
     byte[] sendData=new byte[1024]; //发送的数据，必须为字节  
     int recvLen; //接收的数据长度  
     Thread connectThread; //连接线程  
-  
+    float fsr;
+	int speed = 5;
+	int maxAngle = 270;
+	public Transform Body;
+	public Transform Head;
      
     //初始化  
     void InitSocket()  
     {  
         //定义侦听端口,侦听任何IP  
-        ipEnd=new IPEndPoint(IPAddress.Any,27);  
+        ipEnd=new IPEndPoint(IPAddress.Any,30);  
         //定义套接字类型,在主线程中定义  
         socket=new Socket(AddressFamily.InterNetwork,SocketType.Dgram,ProtocolType.Udp);  
         //服务端需要绑定ip  
         socket.Bind(ipEnd);  
         //定义客户端  
-        IPEndPoint sender=new IPEndPoint(IPAddress.Any,0);  
+        IPEndPoint sender=new IPEndPoint(IPAddress.Any,30);  
         clientEnd=(EndPoint)sender;  
         print("waiting for UDP dgram");  
   
@@ -42,16 +44,7 @@ public class UDPReceive:MonoBehaviour
         connectThread=new Thread(new ThreadStart(SocketReceive));  
         connectThread.Start();  
     }  
-  
-    void SocketSend(string sendStr)  
-    {  
-        //清空发送缓存  
-        sendData=new byte[1024];  
-        //数据类型转换  
-        sendData=Encoding.ASCII.GetBytes(sendStr);  
-        //发送给指定客户端  
-        socket.SendTo(sendData,sendData.Length,SocketFlags.None,clientEnd);  
-    }  
+
   
     //服务器接收  
     void SocketReceive()  
@@ -63,20 +56,16 @@ public class UDPReceive:MonoBehaviour
             recvData=new byte[1024];  
             //获取客户端，获取客户端数据，用引用给客户端赋值  
             recvLen=socket.ReceiveFrom(recvData,ref clientEnd);  
-            print("message from: "+clientEnd.ToString()); //打印客户端信息  
+            //print("message from: "+clientEnd.ToString()); //打印客户端信息  
             //输出接收到的数据  
             recvStr=Encoding.ASCII.GetString(recvData,0,recvLen);  
-            print(recvStr); 
+            //print(recvStr); 
             char[] splitChar = { ' ', ',', ':', '\t', ';' };
             string[] dataRaw = recvStr.Split(splitChar);
-            RotateX = float.Parse(dataRaw[2]);
+            RotateX = float.Parse(dataRaw[0]);
             RotateY = float.Parse(dataRaw[1]);
-            RotateZ = float.Parse(dataRaw[0]);
+            RotateZ = float.Parse(dataRaw[2]);
             TouchVal = float.Parse(dataRaw[3]);
-            
-            //将接收到的数据经过处理再发送出去  
-            sendStr="From Server: "+recvStr;  
-            SocketSend(sendStr);  
         }  
     }  
   
@@ -105,14 +94,15 @@ public class UDPReceive:MonoBehaviour
     // Update is called once per frame  
     void FixedUpdate()  
     {  
-  //transform.rotation = Quaternion.Euler(RotateY,RotateZ,-RotateX);//adafriut
-  if(TouchVal == 1){
+        transform.rotation = Quaternion.Euler(-RotateZ,RotateX,-RotateY);
+        fsr = test.TouchVal;
+		if(fsr > 50){
        var target = Quaternion.Euler(0, maxAngle, 0);
-        transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * speed);
+        Head.transform.localRotation = Quaternion.Slerp(Head.transform.localRotation, target, Time.deltaTime * speed);
   }
-  else{
+        else{
         var target = Quaternion.Euler(0, 0, 0);
-        transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * speed);
+        Head.transform.localRotation = Quaternion.Slerp(Head.transform.localRotation, target, Time.deltaTime * speed);
   }
     }  
   
