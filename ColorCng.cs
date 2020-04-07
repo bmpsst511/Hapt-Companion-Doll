@@ -10,7 +10,7 @@ public class ColorCng : MonoBehaviour {
 	public Material matofobj;
 	public Material[] materials;
 	public Renderer render;
-    public GameObject HeadUnity;
+   	public GameObject HeadUnity;
     
     public float speed=5;
     Socket socket; //target socket  
@@ -59,18 +59,18 @@ void InitSocket()  //Initialize socket
 
     /* void SocketSend(string sendStr)
      {
-         //清空发送缓存
+         //清空發送缓存
          sendData=new byte[1024];
-         //数据类型转换
+         //數據類型轉換
          sendData=Encoding.ASCII.GetBytes(sendStr);
-         //发送给指定客户端
+         //發送给指定客户端
          socket.SendTo(sendData,sendData.Length,SocketFlags.None,clientEnd);
      }*/
 
 
     void SocketReceive()  
     {  
-        //进入接收循环  
+        //進入接收循環  
         while(true)  
         {    
             recvData=new byte[1024];  //clean previous data  
