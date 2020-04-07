@@ -13,7 +13,7 @@ public class ColorCng : MonoBehaviour {
     public GameObject HeadUnity;
     
     public float speed=5;
-	Socket socket; //target socket  
+    Socket socket; //target socket  
     EndPoint clientEnd; //client end  
     IPEndPoint ipEnd; //listening port  
     string recvStr; //receive string
@@ -22,15 +22,15 @@ public class ColorCng : MonoBehaviour {
     byte[] sendData=new byte[1024]; //send data the type need to be char or string  
     int recvLen; //the length of receive data 
     /*** define label of force sensor***/
-	static public  float fsrval;
+    static public  float fsrval;
     static public  float fsrval2;
     /*** define label of force sensor***/
 
     /*** define the animation label of model***/
     public Animator Anim;
-	public AnimatorStateInfo BS;
-	public int Grab = Animator.StringToHash("Base Layer.still");
-	public int Stay = Animator.StringToHash("Base Layer.angry");
+    public AnimatorStateInfo BS;
+    public int Grab = Animator.StringToHash("Base Layer.still");
+    public int Stay = Animator.StringToHash("Base Layer.angry");
     public int Stay1 = Animator.StringToHash("Base Layer.sad");
     public int Stay2 = Animator.StringToHash("Base Layer.disgust");
     /*** define the animation label of model***/
