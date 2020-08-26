@@ -40,10 +40,10 @@ Conclusion
 ---
 Finally, we developed a VR application for users to experience an intuitive and immersive VR experience. We believe that this intuitive companion doll also inspired other related application services. However, to complete the limitations points of this research need to include a more detailed analysis of the psychophysiology of the user study to discover more intuitive behaviors so that the user can be deeply immersed in the virtual environment. (I don’t understand this) By using more motion generator components alongside DC motors and gears, the tail swing can be made more vivid.
 
-<center class="half">
+<div align=center>
     <img src="https://i.imgur.com/iOd3BEx.png" width="200"/>
     <img src="https://i.imgur.com/TQigV8m.png" width="210"/>
-</center>
+</div>
 
 
 ###### tags: `Templates` `Documentation`
