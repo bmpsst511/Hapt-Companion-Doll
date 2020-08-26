@@ -13,11 +13,11 @@ Haptdoll: A Development of Gesture-based Interactions for Haptic Companion Doll 
 [TOC]
 
 ## Abstract
-
+<div align>
 The main purpose of virtual reality is to immerse a user in a virtual environment. However, the most common criticism of the companion robotics is that they are not able to provide effective tactile feedback. 
 In this minor research, we will propose a haptic feedback companion doll which has a tail mechanism controlled by the user hand gestures. 
 For the reaction part, we design three emotions for the doll that can give user different feeling while they are interact with the companion doll in virtual and physical worlds.
-
+<>
 
 Introduction
 ---
