@@ -1,5 +1,5 @@
 ---
-title: 'Haptdoll: A Development of Gesture-based Interactions for Haptic Companion Doll in Virtual and Physical Environment'
+title: 'The Development of an Interactive Device for Tactile Sensation with Haptic Companion Doll'
 disqus: hackmd
 ---
 
