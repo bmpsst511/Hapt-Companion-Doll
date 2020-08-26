@@ -28,8 +28,13 @@ Our Approach
 Virtual reality interactive applications, using types of equipment including LeapMotion and HTC VIVE. LeapMotion is mainly for the intuitive gesture control and HTC VIVE is for the virtual reality application development. By applying the Unity game engine to integrate LeapMotion and HTCVIVE to develop virtual reality interactive applications. In order to allow the virtual companion doll to have rich content to enhance the user’s immersive experience in the virtual environment, an interactive doll with a tail mechanism was developed, as shown in Figure 3, to simulate the tactile feedback with different virtual doll emotions. This interactive doll uses WeMos D1 mini as a microcontroller and is equipped with a WIFI module. The virtual content is developed by Unity to allow users to perform interactive applications. Two servomotors are used to drive and control the tail mechanism. The outer layer of the tail mechanism is covered with cotton and cloth to become a physical doll.
 
 <center class="half">
-    <img src="https://i.imgur.com/9CgWgH2.png" width="180"/><img src="https://i.imgur.com/lxbPSQ2.jpg" width="180"/><img src="https://i.imgur.com/vm73GWi.jpg" width="200"/>
+    <img src="https://i.imgur.com/9CgWgH2.png" width="300"/>
+    <img src="http://yyy.jpg" width="300"/>
 </center>
+
+//<center class="half">
+//    <img src="https://i.imgur.com/9CgWgH2.png" width="180"/><img src="https://i.imgur.com/lxbPSQ2.jpg" width="180"/><img src="https://i.imgur.com/vm73GWi.jpg" width="200"/>
+//</center>
 
 
 
