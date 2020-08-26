@@ -21,7 +21,33 @@ For the reaction part, we design three emotions for the doll that can give user 
 
 Introduction
 ---
-Most current research methods are limited to expressing the interaction process between humans and interactive dolls in the virtual world [1, 2], ignoring the haptic feedback that is continuous or conveys a sense of reality. Even in the real environment, there are many limitations to the interactive experience when delivered by vibration only. In order to develop more specific technologies, our previous work proposed the development of tactile interactions for virtual companion dolls [3]. Therefore, as an extension of our previous work, this research provides a solution to the problem, which is that users have difficulty in obtaining an intuitive experience in a virtual environment. LeapMotion is used to track user gestures and interact with the doll. In the virtual and real world, the doll will display different tail animations and physical movements according to different user gestures to activate the doll’s emotions at the time.
+Our research group is trying to provide a new interface for interactive robotic in between virtual 
+(VE) and real environment (RE). % 
+Our previous work [1,2] %ICVR, VRCAI
+has developed the interactive companion doll to deliver 
+the intuitive manipulating object and motor-driven feedback in VE and RE to
+let the users not only can perceive visual and sound feedback but perceive related motor-driven 
+feedback during the experience. However, an emotion effect is a complex system, which has various conditions to be
+activated by the different stimuli. Currently, {\color{red}to provide emotion feedback by simulating (natural behavior)
+such as continuous touch, stamp and hit} in VE, same time control the physical companion doll to display the 
+correspond reaction is a challenge, there were no such an interactive interface able to simulate all the natural
+behavior to provide the diversity of interaction. Most of the works developed the interactive doll only provide 
+one-way communication from players to audiences, or just support interaction either in the VE or RE. 
+To enhance the immersive experience in VR system,
+we proposed a dynamic gesture control system based on the concept of three emotions (happy, sad and disgust) which
+utilize LeapMotion to simulate and get the hand activity data in virtual reality. The system consists of interactive 
+companion doll and {\color{red}virtual interactive interface developed with Unity.} With the system, the user can interact
+through three gestures with the digital companion doll to activate three emotions in the virtual scenario. 
+Meanwhile, the user also can feel the motor-driven feedback when they are interacting with the companion doll.
+The main contribution of this research are summarized as follows.
+
+First, we developed a motor-driven tail mechanism with six emotions movements (happy, sad, angry, joy, surprise and disgust)
+to deliver the real feedback from virtual scenario and a user study is conduct for selecting 
+most three distinguished emotions (happy, sad and disturbing).
+
+Second, we build an immersive VR application with a real doll for exploratory observation gestures how users represent.
+Third, based on the results of first and second, we modify the immersive VR application allow user interact with 
+companion doll in between virtual and real world. 
 
 Our Approach
 ---
@@ -38,7 +64,7 @@ Virtual reality interactive applications, using types of equipment including Lea
 
 Conclusion
 ---
-Finally, we developed a VR application for users to experience an intuitive and immersive VR experience. We believe that this intuitive companion doll also inspired other related application services. However, to complete the limitations points of this research need to include a more detailed analysis of the psychophysiology of the user study to discover more intuitive behaviors so that the user can be deeply immersed in the virtual environment. (I don’t understand this) By using more motion generator components alongside DC motors and gears, the tail swing can be made more vivid.
+Finally, we developed a VR application for users to experience an intuitive and immersive VR experience. We believe that this intuitive companion doll also inspired other related application services. However, to complete the limitations points of this research need to include a more detailed analysis of the psychophysiology of the user study to discover more intuitive behaviors so that the user can be deeply immersed in the virtual environment. By using more motion generator components alongside DC motors and gears, the tail swing can be made more vivid.
 
 <div align=center>
     <img src="https://i.imgur.com/iOd3BEx.png" width="200"/>
