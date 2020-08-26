@@ -44,6 +44,3 @@ Finally, we developed a VR application for users to experience an intuitive and 
     <img src="https://i.imgur.com/iOd3BEx.png" width="200"/>
     <img src="https://i.imgur.com/TQigV8m.png" width="210"/>
 </div>
-
-
-###### tags: `Templates` `Documentation`
