@@ -22,6 +22,7 @@ The main purpose of virtual reality is to immerse a user in a virtual environmen
 Introduction
 ---
 The distinguishing feature of immersive virtual and augmented realities depends on engaging intuitive control experience and all of the senses. As the extension of our previous work [1], this research proposes a wearable device and a companion doll as shown in Figure 1. The wearable device can track human activities for arms and upper-body that interact with virtual objects. In the virtual companion doll, we designed six facial expressions such as joy, angry, sad, surprise, fear, disgust, and different motions of motor rotation which are changed by the force sensor value activated by the users while they interacting with physical companion doll.
+
 ![](https://i.imgur.com/R9IC5uj.png)
 
 System Overview
