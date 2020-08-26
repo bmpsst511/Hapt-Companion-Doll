@@ -32,7 +32,7 @@ Virtual reality interactive applications, using types of equipment including Lea
     <img src="https://i.imgur.com/9CgWgH2.png" width="180"/>
     <img src="https://i.imgur.com/lxbPSQ2.jpg" width="180"/>
     <img src="https://i.imgur.com/vm73GWi.jpg" width="200"/>
-</center><>
+</center><div>
 
 
 
